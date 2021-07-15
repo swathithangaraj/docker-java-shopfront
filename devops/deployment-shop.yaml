@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopfront
+  namespace: java
+  labels:
+    app: shopfront
+spec:
+  template:
+    metadata:
+      labels:
+        app: shopfront
+    spec:
+      containers:
+      - name: shopfront
+        image: swathithangaraj/java:shop
+        ports: 
+        - containerPort: 8010
+  selector:
+    matchLabels:
+      app: shopfront
+  replicas: 2   
