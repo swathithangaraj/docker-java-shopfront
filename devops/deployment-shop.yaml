@@ -13,12 +13,10 @@ spec:
     spec:
       containers:
       - name: shopfront
-        image: jfrogimplementation.jfrog.io/docker-java-docker/docker-java-docker:shopfront_{tag}
+        image: swathithangaraj/java:shopfront_{tag}
         ports: 
         - containerPort: 8010
-      imagePullSecrets:
-      - name: regcred
   selector:
     matchLabels:
       app: shopfront
-  replicas: 2   
+  replicas: 2  
